@@ -1,8 +1,7 @@
 
-
 const SearchBar = () => {
   return (
-    <div>
+    <div className="flex justify-center items-center ">
       <h1>Searchbar</h1>
     </div>
   )

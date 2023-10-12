@@ -2,8 +2,10 @@
 // import CurrentWeather from "./components/CurrentWeather"
 // import Forecast from "./components/Forecast"
 // import HourlyWeather from "./components/HourlyWeather"
-import SearchBar from "./components/searchBar"
+import SearchBar from "./components/SearchBar"
+
 import Rain from './assets/Rain.jpeg'
+// import Sunny from './assets/Sunny.jpeg'
 
 
 
@@ -15,16 +17,14 @@ function App() {
 
 
   return (
-    <>
+    <div className='w-full h-screen'>
+    <img className="w-full h-screen object-cover" src={Rain} alt="" />
+    <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/30 z-[2]"/>
     <SearchBar />
-    <img className="w-full h-screen object-cover object-left scale-x-[-1]" src={Rain} alt="" />
-    <div className='w-full h-screen absolute top-0 left-0 bg-white/30 '>
-      
   {/* <CurrentWeather />
   <Forecast />
 <HourlyWeather /> */}
-</div>  
-    </>
+    </div>
   )
 }
 

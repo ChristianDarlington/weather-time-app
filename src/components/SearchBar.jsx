@@ -1,8 +1,15 @@
 
 const SearchBar = () => {
+
+// const handleClick = () => {
+
+//     console.log('bread')
+//   }
+
+
   return (
-    <div className="flex justify-center items-center ">
-      <h1>Searchbar</h1>
+    <div className="absolute w-full h-screen bottom-80 flex flex-col justify-center items-center">
+      <input type="text" name="" value='' id="" placeholder="Search for city"/>
     </div>
   )
 }

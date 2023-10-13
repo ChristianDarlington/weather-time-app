@@ -2,7 +2,9 @@
 const CurrentWeather = () => {
   
   return (
-    <div>CurrentWeather</div>
+    <div className="absolute">
+
+    </div>
   )
 }
 

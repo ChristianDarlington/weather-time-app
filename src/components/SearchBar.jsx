@@ -6,6 +6,10 @@ const SearchBar = () => {
 //     console.log('bread')
 //   }
 
+// const searchCity = () => {
+
+// }
+
 
   return (
     <div className="absolute inset-x-0 top-1/4 ">

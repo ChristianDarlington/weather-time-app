@@ -13,7 +13,7 @@ function App() {
 
   const apiKey = import.meta.env.VITE_REACT_APP_API_KEY
 
-  const url = `https://api.openweathermap.org/data/2.5/forecast?q=London&appid=${apiKey}`
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=Miami&appid=${apiKey}`
 
   const fetchData = async () => {
     try {
@@ -29,22 +29,38 @@ function App() {
     fetchData()
   }, [])
 
+  const weathers = Object.keys(weatherData)
+
   console.log(weatherData)
 
   return (
     <div className="relative w-full h-screen">
       {/* <video className="w-full h-full object-cover" src={Rainy} autoPlay loop muted /> */}
       {/* <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]" /> */}
-      {weatherData.length > 0 && (
-        <ul>
-          {weatherData.map(user => (
-            <h1 className=' bg-red-700' key={user.city.id}>{user.main.temp}</h1>
+      {weatherData?.city?.name || ''}
+      <br />
+      {weatherData?.list?.map((row) => (
+        <>
+          Vis: {row.visibility}<br />
+          Speed: {row.wind.speed}<br />
+          {row.weather.map(r => (
+            <>
+              {r.main} - {r.description}
+            </>
           ))}
-        </ul>
-      )}
+          <hr />
+        </>
+      ))}
 
+      {weathers && (
+        <div>
+          {weathers.map((weather) => {
+            <p>{weather.city}</p>
+          })}
+        </div>
+      )}
+     <CurrentWeather />
       <SearchBar />
-      <CurrentWeather dataProp={weatherData} />
       {/* <Forecast />
 <HourlyWeather />   */}
     </div>

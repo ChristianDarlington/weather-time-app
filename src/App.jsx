@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import SearchBar from './components/SearchBar'
 import CurrentWeather from './components/CurrentWeather'
-// import Forecast from "./components/Forecast"
-// import HourlyWeather from "./components/HourlyWeather"
+import Forecast from "./components/Forecast"
+import HourlyWeather from "./components/HourlyWeather"
 
 import Rainy from './assets/Rainy.mp4'
 // import Sunny from './assets/Sunny.jpeg'
@@ -29,7 +29,7 @@ function App() {
     fetchData()
   }, [])
 
-  const weathers = Object.keys(weatherData)
+ 
 
   console.log(weatherData)
 
@@ -37,31 +37,15 @@ function App() {
     <div className="relative w-full h-screen">
       <video className="w-full h-full object-cover" src={Rainy} autoPlay loop muted />
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]" />
-      {weatherData?.city?.name || ''}
-      <br />
+      {/* {weatherData?.city?.name || ''} */}
       {weatherData?.list?.map((row) => (
         <>
-          Vis: {row.visibility}<br />
-          Speed: {row.wind.speed}<br />
-          {row.weather.map(r => (
-            <>
-              {r.main} - {r.description}
-            </>
-          ))}
+        <CurrentWeather row={row}/>
+        <Forecast weatherData={weatherData} setWeatherData={setWeatherData} />
+        <HourlyWeather weatherData={weatherData} setWeatherData={setWeatherData} />
         </>
       ))}
-
-      {weathers && (
-        <div>
-          {weathers.map((weather) => {
-            <p>{weather.city}</p>
-          })}
-        </div>
-      )}
-     <CurrentWeather />
-      <SearchBar />
-      {/* <Forecast />
-<HourlyWeather />   */}
+      <SearchBar  weatherData={weatherData} setWeatherData={setWeatherData}/>
     </div>
   )
 }

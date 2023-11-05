@@ -3,11 +3,11 @@ const SearchBar = () => {
 
 
   return (
-    <div className="absolute top-8 left-8 bottom-8 right-8 z-10">
+    <div className="absolute top-4 left-4 p-24 z-10 pl-12">
     <input
       type="text"
       placeholder="Search for cities"
-      className="p-2 rounded border border-gray-400 w-64"
+      className="p-3 rounded border border-gray-400 w-64"
     />
     <button className="p-2 ml-2 bg-gray-500 text-white rounded">Search</button>
   </div>

@@ -1,6 +1,9 @@
 
 const SearchBar = () => {
 
+ const searchCity = () => {
+
+  }
 
   return (
     <div className="absolute top-4 left-4 p-24 z-10 pl-12">

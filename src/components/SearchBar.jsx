@@ -6,7 +6,7 @@ const SearchBar = () => {
 //   }
 
   return (
-    <div className="absolute top-4 left-4 p-24 z-10 pl-12">
+    <div className="absolute top-4 left-4 p-24 z-10 pl-14">
     <input
       type="text"
       placeholder="Search for cities"
